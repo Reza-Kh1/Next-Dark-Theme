@@ -2,7 +2,7 @@
     position: relative;
     background-repeat: no-repeat;
     background-position: bottom;
-    background-image: url('/_next/static/media/AbstractDesign.5c262c8b.png');
+    background-image: url('../../../public/AbstractDesign.png');
     background-size: contain;
     height: 600px;
 }

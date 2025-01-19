@@ -4,9 +4,6 @@ import { Accordion, AccordionItem } from "@nextui-org/react";
 import { FaPlus } from "react-icons/fa6";
 import { MdClose } from "react-icons/md";
 
-interface AccordionItemState {
-  [key: number]: boolean;
-}
 const dataAccordion = [
   {
     num: 1,
@@ -51,90 +48,86 @@ const data2 = [
     text: " adipisicing elit. Debitis ad dolor aut, cumque cum quaerat enim! Perferendis, ex? Suscipit culpa repellat totam doloribus",
   },
 ];
+
 const AccordionBox: React.FC = () => {
-  const [openItems, setOpenItems] = useState<AccordionItemState>({});
+  const [openItem, setOpenItem] = useState<number | null>(null);
+  const [openItem2, setOpenItem2] = useState<number | null>(null);
 
   const handleToggle = (key: number) => {
-    setOpenItems((prevOpenItems) => ({
-      ...prevOpenItems,
-      [key]: !prevOpenItems[key],
-    }));
+    setOpenItem((prevOpenItem) => (prevOpenItem === key ? null : key));
   };
-
+  const handleToggle2 = (key: number) => {
+    setOpenItem2((prevOpenItem) => (prevOpenItem === key ? null : key));
+  };
   const getContentStyle = (key: number) =>
-    openItems[key] ? "text-green-50" : "text-white";
-
+    openItem === key ? "text-green-50" : "text-white";
+  const getContentStyle2 = (key: number) =>
+    openItem2 === key ? "text-green-50" : "text-white";
   return (
     <div className="flex items-start">
       <Accordion className="flex flex-wrap p-0">
-        {data2.map((item, index) => {
-          const key = index + 1;
-          return (
-            <AccordionItem
-              className="p-6 border-custom w-full"
-              key={item.num}
-              aria-label={item.name}
-              textValue={item.name}
-              startContent={
-                <>
-                  <span
-                    className={`p-3 text-xl  rounded-md mr-2 bg-icon ${getContentStyle(
-                      item.num
-                    )}`}
-                  >
-                    {item.num}
-                  </span>
-                  <span className={getContentStyle(item.num)}>{item.name}</span>
-                </>
-              }
-              indicator={() =>
-                openItems[item.num] ? (
-                  <MdClose color="#C5FF66" size={25} />
-                ) : (
-                  <FaPlus className="text-white" size={25} />
-                )
-              }
-              onClick={() => handleToggle(item.num)}
-            >
-              <p className="text-gray-400">{item.text}</p>
-            </AccordionItem>
-          );
-        })}
+        {data2.map((item) => (
+          <AccordionItem
+            className="p-6 border-custom w-full"
+            key={item.num}
+            aria-label={item.name}
+            textValue={item.name}
+            startContent={
+              <>
+                <span
+                  className={`p-3 text-xl  rounded-md mr-2 bg-icon ${getContentStyle(
+                    item.num
+                  )}`}
+                >
+                  0{item.num}
+                </span>
+                <span className={getContentStyle(item.num)}>{item.name}</span>
+              </>
+            }
+            indicator={() =>
+              openItem === item.num ? (
+                <MdClose color="#C5FF66" size={25} />
+              ) : (
+                <FaPlus className="text-white" size={25} />
+              )
+            }
+            onClick={() => handleToggle(item.num)}
+          >
+            <p className="text-gray-400">{item.text}</p>
+          </AccordionItem>
+        ))}
       </Accordion>
       <Accordion className="flex flex-wrap p-0">
-        {dataAccordion.map((item, index) => {
-          const key = index + 1;
-          return (
-            <AccordionItem
-              className="p-6 border-custom w-full"
-              key={item.num}
-              aria-label={item.name}
-              textValue={item.name}
-              startContent={
-                <>
-                  <span
-                    className={`p-3 text-xl  rounded-md mr-2 bg-icon ${getContentStyle(
-                      item.num
-                    )}`}
-                  >
-                    0{item.num}
-                  </span>
-                  <span className={getContentStyle(item.num)}>{item.name}</span>
-                </>
-              }
-              indicator={() =>
-                openItems[item.num] ? (
-                  <MdClose color="#C5FF66" size={25} />
-                ) : (
-                  <FaPlus className="text-white" size={25} />
-                )
-              }
-              onClick={() => handleToggle(item.num)}
-            >
-              <p className="text-gray-400">{item.text}</p>
-            </AccordionItem>
-          );
-        })}
+        {dataAccordion.map((item) => (
+          <AccordionItem
+            className="p-6 border-custom w-full"
+            key={item.num}
+            aria-label={item.name}
+            textValue={item.name}
+            startContent={
+              <>
+                <span
+                  className={`p-3 text-xl  rounded-md mr-2 bg-icon ${getContentStyle2(
+                    item.num
+                  )}`}
+                >
+                  0{item.num}
+                </span>
+                <span className={getContentStyle2(item.num)}>{item.name}</span>
+              </>
+            }
+            indicator={() =>
+              openItem2 === item.num ? (
+                <MdClose color="#C5FF66" size={25} />
+              ) : (
+                <FaPlus className="text-white" size={25} />
+              )
+            }
+            onClick={() => handleToggle2(item.num)}
+          >
+            <p className="text-gray-400">{item.text}</p>
+          </AccordionItem>
+        ))}
       </Accordion>
     </div>
   );

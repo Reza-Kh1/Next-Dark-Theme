@@ -1,4 +1,3 @@
-import ImageCustom from "@/components/ImageCustom/ImageCustom";
 import Link from "next/link";
 import { FaHome } from "react-icons/fa";
 
@@ -6,7 +5,6 @@ export default function NotFound() {
   return (
     <div
       className="relative min-h-screen w-full not-found"
-      style={{ backgroundImage: "url('/sky-image.webp')" }}
     >
       <div className="absolute transform -translate-x-1/2 top-16 left-1/2 w-full flex justify-center">
         <span className="text-gray-200 md:text-lg font-bold block">

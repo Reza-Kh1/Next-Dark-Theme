@@ -12,6 +12,7 @@ type ImageType = {
   classPlus?: string;
   figureClass?: string;
   onClick?: (value: any) => void
+  icon?:boolean
 };
 export default function ImageCustom({
   width,
@@ -21,11 +22,13 @@ export default function ImageCustom({
   className,
   classPlus,
   figureClass,
-  onClick
+  onClick,
+  icon
 }: ImageType) {
   const [load, setLoad] = useState<boolean>(true);
   const [error, setError] = useState<StaticImageData | null>(null)
-  const classImage = className ? className : classPlus ? `${classPlus} rounded-md shadow-md  table mx-auto` : "rounded-md shadow-md w-full h-auto table mx-auto object-fill"
+  const classImage =  className ? className : classPlus ? `${classPlus} rounded-md shadow-md  table mx-auto` : ""
+  const iconClass = `bg-icon w-14 p-3 rounded-md ${classPlus}`
   return (
     <figure className={figureClass || "w-full relative"}>
       <Image
@@ -38,7 +41,7 @@ export default function ImageCustom({
         onLoad={() => setLoad(false)}
         src={error ? error : src || ImageError}
         alt={alt || "error"}
-        className={classImage}
+        className={icon ? iconClass: classImage}
         onError={() => setError(ImageError)}
       />
       {load && <LoadingImg />}

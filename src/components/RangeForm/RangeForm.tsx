@@ -1,11 +1,13 @@
 "use client";
 import React, { useState } from "react";
 import "./style.css";
-
-export default function RangeForm() {
-  const [leftValue, setLeftValue] = useState<number>(2500);
-  const [rightValue, setRightValue] = useState<number>(7500);
-
+type RangeFormType={
+  setLeftValue:(value:number)=>void
+  setRightValue:(value:number)=>void
+  leftValue:number
+  rightValue:number
+}
+export default function RangeForm({setLeftValue,setRightValue,leftValue,rightValue}:RangeFormType) {
   const handleLeftChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = Math.min(Number(e.target.value), rightValue - 1);
     setLeftValue(value);
@@ -15,7 +17,7 @@ export default function RangeForm() {
     const value = Math.max(Number(e.target.value), leftValue + 1);
     setRightValue(value);
   };
-
+  
   return (
     <div className="range-container pb-6">
       <input

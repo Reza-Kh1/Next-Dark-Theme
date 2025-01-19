@@ -32,7 +32,7 @@ export default function RootLayout({
       >
         <ThmeProvider>
           <Header />
-          <main className="main-class">{children}</main>
+          <main className="main-class px-3 md:px-16 xl:px-0">{children}</main>
           <Footer />
         </ThmeProvider>
       </body>

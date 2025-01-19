@@ -11,7 +11,7 @@ export default function NavLink({ name, url }: NavLinkType) {
   return (
     <Link
       href={url}
-      className={`p-3 text-sm px-5 rounded-md text-gray-50 ${
+      className={`lg:p-3 p-2 text-sm px-3 lg:px-5 rounded-md text-gray-50 ${
         path === url ? "bg-dark-c" : ""
       }`}
     >
