@@ -85,6 +85,7 @@ export default function page() {
         text="Discover a portfolio of visually stunning and strategically crafted digital projects that showcase our creativity and expertise."
       />
       <SectionHead
+        h2
         btnText="Here are ten examples of our notable works:"
         name="At SquareUp"
         text="We have had the privilege of working with a diverse range of clients and delivering exceptional digital products that drive success."
@@ -124,12 +125,12 @@ export default function page() {
           </div>
         ))}
       </div>
-      <ContainerHead 
-      height={500}
-      isButton
-      isLogo
-      name="Let us Bring your Ideas to Life in the Digital World."
-      text="No matter which services you choose, we are committed to delivering exceptional results that exceed your expectations. Our multidisciplinary team works closely together to ensure seamless collaboration and a unified vision for your digital product."
+      <ContainerHead
+        height={500}
+        isButton
+        isLogo
+        name="Let us Bring your Ideas to Life in the Digital World."
+        text="No matter which services you choose, we are committed to delivering exceptional results that exceed your expectations. Our multidisciplinary team works closely together to ensure seamless collaboration and a unified vision for your digital product."
       />
     </div>
   );
