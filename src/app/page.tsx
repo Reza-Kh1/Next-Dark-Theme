@@ -109,15 +109,15 @@ export default function Home() {
   return (
     <div className="border-custom">
       <ContainerHome />
-      <div className="border-custom flex gap-5 py-12 items-center justify-evenly">
+      <div className="border-custom grid overflow-auto items-center text-center grid-cols-3 md:grid-cols-6 gap-5 py-12 px-2 w-full">
         {iconText.map((i, index) => (
-          <figure key={index}>
+          <figure key={index} className="w-full block ">
             <Image
               width={200}
               height={100}
               loading="lazy"
               alt="text"
-              className="w-20"
+              className="w-20 mx-auto table"
               src={i}
             />
           </figure>
@@ -131,11 +131,11 @@ export default function Home() {
           width={1280}
           height={270}
         />
-        <div className="flex ">
+        <div className="grid md:grid-cols-3 grid-cols-1">
           {dataServices.map((i, index) => (
             <section
               key={index}
-              className="p-8 border-custom h-[410px] flex flex-col justify-between"
+              className="p-4 md:p-8 border-custom h-[410px] flex flex-col justify-between"
             >
               <Image
                 alt="icon"
@@ -161,9 +161,9 @@ export default function Home() {
           width={1280}
           height={270}
         />
-        <div className="grid grid-cols-2">
+        <div className="grid gap-5 md:gap-0 grid-cols-1 md:grid-cols-2">
           {dataSequare.map((i, index) => (
-            <section key={index} className="p-12  border-custom">
+            <section key={index} className="p-4 md:p-12  border-custom">
               <div className="flex items-center gap-5 mb-6">
                 <Image
                   alt="icon"
@@ -187,11 +187,11 @@ export default function Home() {
           width={1280}
           height={270}
         />
-        <div className="grid grid-cols-2">
+        <div className="grid gap-5 grid-cols-1 md:gap-5 md:grid-cols-2">
           {dataASked.map((i, index) => (
             <section
               key={index}
-              className="p-12 border-custom flex flex-col justify-between gap-5"
+              className="p-6 md:p-12 border-custom flex flex-col justify-between gap-3 md:gap-5"
             >
               <span className="text-[#D8FF99] text-lg">{i.title}</span>
               <p className="text-sm text-gray-500">{i.text}</p>
@@ -205,8 +205,8 @@ export default function Home() {
                     height={50}
                   />
                   <div className="flex flex-col">
-                    <span className="text-gray-200 text-sm">{i.name}</span>
-                    <span className="text-gray-200 text-sm">{i.job}</span>
+                    <span className="text-gray-200 text-xs md:text-sm">{i.name}</span>
+                    <span className="text-gray-200 text-xs md:text-sm">{i.job}</span>
                   </div>
                 </div>
                 <Button className="rounded-md p-4 text-white bg-dark-c">

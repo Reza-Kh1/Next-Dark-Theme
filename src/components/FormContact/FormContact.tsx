@@ -17,10 +17,10 @@ export default function FormContact() {
   return (
     <form
       action={submitHandler}
-      className="border-custom w-3/4 mx-auto flex flex-col gap-8 p-12"
+      className="border-custom w-full md:w-3/4 mx-auto flex flex-col gap-8 p-4 md:p-12"
     >
-      <div className="flex gap-8">
-        <div className="p-8 w-1/2 border-custom bg-[#24242480] rounded-md">
+      <div className="flex md:flex-row flex-col gap-8">
+        <div className="p-4 md:p-8 w-full md:w-1/2 border-custom bg-[#24242480] rounded-md">
           <span className="block text-white font-semibold mb-5">Full Name</span>
           <input
             name="name"
@@ -29,7 +29,7 @@ export default function FormContact() {
             className="border-b text-white focus-visible:outline-none  w-full bg-transparent border-gray-600/80 pb-1"
           />
         </div>
-        <div className="p-8 w-1/2 border-custom bg-[#24242480] rounded-md">
+        <div className="p-4 md:p-8 w-full md:w-1/2 border-custom bg-[#24242480] rounded-md">
           <span className="block text-white font-semibold mb-5">Email</span>
           <input
             name="email"
@@ -39,7 +39,7 @@ export default function FormContact() {
           />
         </div>
       </div>
-      <div className="p-8 border-custom bg-[#24242480] rounded-md">
+      <div className="p-4 md:p-8 border-custom bg-[#24242480] rounded-md">
         <span className="block text-white font-semibold mb-8">
           Why are you contacting us?
         </span>
@@ -52,14 +52,14 @@ export default function FormContact() {
           ))}
         </section>
       </div>
-      <div className="p-8 border-custom bg-[#24242480] rounded-md">
+      <div className="p-4 md:p-8 border-custom bg-[#24242480] rounded-md">
         <span className="block text-white font-semibold mb-5">Your Budget</span>
         <p className=" text-sm text-white mb-8">
           Slide to indicate your budget range
         </p>
         <RangeForm leftValue={leftValue} rightValue={rightValue} setLeftValue={setLeftValue} setRightValue={setRightValue} />
       </div>
-      <div className="p-8 border-custom bg-[#24242480] rounded-md">
+      <div className="p-4 md:p-8 border-custom bg-[#24242480] rounded-md">
         <span className="block text-white font-semibold mb-5">
           Your Message
         </span>
@@ -71,7 +71,7 @@ export default function FormContact() {
         />
       </div>
       <div className="text-center">
-        <Button className="p-4 px-7 rounded-md bg-green-50">Submit</Button>
+        <Button className="p-4 md:p-8 px-7 rounded-md bg-green-50">Submit</Button>
       </div>
     </form>
   );

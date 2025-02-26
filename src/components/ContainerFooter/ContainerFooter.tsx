@@ -4,8 +4,8 @@ import ImageCustom from "../ImageCustom/ImageCustom";
 
 export default function ContainerFooter() {
   return (
-    <section className="border-custom p-12">
-      <div className="flex gap-5 items-center mb-10">
+    <section className="border-custom p-6 md:p-12">
+      <div className="flex flex-col md:flex-row gap-5 items-center mb-10">
         <ImageCustom
           width={90}
           figureClass="p-5 shadow-insert bg-green-50 rounded-xl inline-block"
@@ -26,10 +26,10 @@ export default function ContainerFooter() {
           </p>
         </div>
       </div>
-      <div className="bg-black/20 flex justify-between rounded-xl items-center p-8 border-custom">
-        <div>
+      <div className="bg-black/20 flex md:flex-row flex-col gap-5 md:gap-0 justify-between rounded-xl items-center p-4 md:p-8 border-custom">
+        <div className="flex md:flex-row flex-col gap-5 md:gap-0">
           <span className="text-p">Welcome to SquareUp</span>
-          <span className="bg-dark-c text-white ml-3 rounded-md p-3 inline-block">
+          <span className="bg-dark-c text-white md:ml-3 rounded-md p-3 inline-block">
             Where collaboration, Expertise, and Client-Centricity Intersect to
             Shape the Future of Digital Innovation.
           </span>

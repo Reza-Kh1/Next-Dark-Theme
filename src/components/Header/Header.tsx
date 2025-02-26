@@ -36,7 +36,7 @@ export default function Header() {
       <div className="flex main-class items-center justify-between py-4 md:py-8">
         <ImageCustom
           width={180}
-          figureClass="w-1/6"
+          figureClass="w-2/6 md:w-1-/6"
           className="md:w-28 md:h-10 lg:w-44 lg:h-16"
           height={70}
           src={"/Logo.png"}

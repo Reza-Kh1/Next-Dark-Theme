@@ -90,13 +90,13 @@ export default function page() {
         name="At SquareUp"
         text="We have had the privilege of working with a diverse range of clients and delivering exceptional digital products that drive success."
       />
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 md:gap-0 md:grid-cols-2">
         {dataWorks.map((i, index) => (
           <div key={index} className="h-full  border-custom">
-            <span className="text-p text-xl block w-full py-8 border-b border-dark-c pl-12">
+            <span className="text-p text-xl block w-full py-4 md:py-8 border-b border-dark-c pl-3 md:pl-12">
               {i.title}
             </span>
-            <section className=" pt-8 h-full px-12 pb-20">
+            <section className="pt-3 md:pt-8 h-full px-5 md:px-12 pb-6 my-5 md:my-0 md:pb-20">
               <ImageCustom
                 src={i.img}
                 alt={i.title}

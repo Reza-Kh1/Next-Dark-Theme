@@ -59,18 +59,18 @@ export default function page() {
         name="At SquareUp"
         text="We follow a structured and collaborative process to ensure the successful delivery of exceptional digital products. Our process combines industry best practices, creative thinking, and a client-centric approach."
       />
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-1 my-5 md:my-0 gap-5 md:gap-0 md:grid-cols-2">
         {dataProcess.map((i, index) => (
-          <div key={index} className="px-10 pt-8 pb-16 h-full border-custom">
+          <div key={index} className="px-5 md:px-10 pt-4 md:pt-8 pb-8 md:pb-16 h-full border-custom">
             <div className="flex items-end gap-2">
-              <div className="text-[#D8FF99] text-[100px] font-semibold h-28">
+              <div className="text-[#D8FF99] text-[40px] md:text-[100px] font-semibold h-12 md:h-28">
                 {i.num}
               </div>
-              <span className="text-xl block w-full text-white border-b border-dark-c pb-4 font-semibold">
+              <span className="text-base md:text-xl block w-full text-white border-b pb-2 border-dark-c md:pb-4 font-semibold">
                 {i.name}
               </span>
             </div>
-            <p className="text-p mt-8 text-justify">{i.text}</p>
+            <p className="text-p md:text-base text-sm mt-8 text-justify">{i.text}</p>
           </div>
         ))}
       </div>

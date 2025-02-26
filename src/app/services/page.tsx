@@ -222,12 +222,12 @@ export default function page() {
           <SectionHead h2 name={row.name} text={row.desc} btnText={row.btn}/>
           {row.banner.map((i) => (
             <div key={i.name}>
-              <span className="text-p md:text-xl lg:text-2xl md:py-6 lg:py-12 border-custom md:pl-6 lg:pl-12 w-full block">
+              <span className="text-p md:text-xl lg:text-2xl py-3 md:py-6 lg:py-12 border-custom pl-3 my-5 md:my-0 md:pl-6 lg:pl-12 w-full block">
                 {i.name}
               </span>
-              <section className="grid grid-cols-4 ">
+              <section className="grid grid-cols-1 gap-5 md:gap-0 md:grid-cols-4 ">
                 {i.icons.map((item, index) => (
-                  <div key={index} className="md:p-6 lg:p-9 border-custom">
+                  <div key={index} className="p-4 md:p-6 lg:p-9 border-custom">
                     <ImageCustom
                       icon
                       alt={"icon reasearch"}

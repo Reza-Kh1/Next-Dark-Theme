@@ -1,7 +1,5 @@
 import ContainerFooter from "@/components/ContainerFooter/ContainerFooter";
 import ContainerHead from "@/components/ContainerHead/ContainerHead";
-import ImageCustom from "@/components/ImageCustom/ImageCustom";
-import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import React from "react";
 const aboutData = [
@@ -45,8 +43,8 @@ export default function page() {
         height={300}
         text="Welcome to SquareUp, where collaboration, expertise, and client-centricity intersect to shape the future of digital innovation."
       />
-      <div className="p-16 border-custom flex items-center gap-16 justify-evenly">
-        <div className="w-1/2">
+      <div className="p-4 md:p-16 border-custom flex flex-col md:flex-row items-center gap-16 justify-evenly">
+        <div className="w-full md:w-1/2">
           <h1 className="text-4xl text-white font-semibold">About SquareUp</h1>
           <p className="text-p mt-5 text-justify">
             SquareUp is a digital product agency that is passionate about
@@ -58,7 +56,7 @@ export default function page() {
             practices, creative thinking, and a client-centric approach.
           </p>
         </div>
-        <div className="w-1/2 container-footer h-[500px] flex justify-center items-center">
+        <div className="w-full md:w-1/2 container-footer h-[300px] md:h-[500px] flex justify-center items-center">
           <figure className="p-5 inline-block rounded-xl bg-green-50 shadow-insert">
             <Image
               className="w-12"
@@ -85,18 +83,18 @@ export default function page() {
       <h2 className="py-16 pl-8 text-white text-3xl font-semibold border-custom">
         Our Story
       </h2>
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-1 my-5 gap-5 md:gap-5 md:my-5 md:grid-cols-2">
         {aboutData.map((i, index) => (
-          <div key={index} className="px-10 pt-8 pb-16 h-full border-custom">
+          <div key={index} className="px-5 md:px-10 pt-4 md:pt-8 pb-8 md:pb-16 h-full border-custom">
             <div className="flex items-end gap-2">
-              <div className="text-[#D8FF99] text-[100px] font-semibold h-28">
+              <div className="text-[#D8FF99] text-[40px] md:text-[100px] font-semibold h-12 md:h-28">
                 {i.num}
               </div>
-              <h3 className="text-2xl block w-full text-[#D8FF99] border-b border-dark-c pb-4 font-semibold">
+              <h3 className="text-base md:text-xl block w-full text-white border-b border-dark-c pb-2 md:pb-4 font-semibold">
                 {i.name}
               </h3>
             </div>
-            <p className="text-p mt-8 text-justify">{i.text}</p>
+            <p className="text-p md:text-base text-sm mt-8 text-justify">{i.text}</p>
           </div>
         ))}
       </div>

@@ -64,26 +64,25 @@ const AccordionBox: React.FC = () => {
   const getContentStyle2 = (key: number) =>
     openItem2 === key ? "text-green-50" : "text-white";
   return (
-    <div className="flex items-start">
+    <div className="flex flex-col md:flex-row items-start">
       <Accordion className="flex flex-wrap p-0">
         {data2.map((item) => (
           <AccordionItem
+            title={<>
+              <span
+                className={`p-3 text-sm md:text-xl  rounded-md mr-2 bg-icon ${getContentStyle(
+                  item.num
+                )}`}
+              >
+                0{item.num}
+              </span>
+              <span className={getContentStyle(item.num)}>{item.name}</span>
+            </>}
+            onPress={() => handleToggle(item.num)}
             className="p-6 border-custom w-full"
             key={item.num}
             aria-label={item.name}
             textValue={item.name}
-            startContent={
-              <>
-                <span
-                  className={`p-3 text-xl  rounded-md mr-2 bg-icon ${getContentStyle(
-                    item.num
-                  )}`}
-                >
-                  0{item.num}
-                </span>
-                <span className={getContentStyle(item.num)}>{item.name}</span>
-              </>
-            }
             indicator={() =>
               openItem === item.num ? (
                 <MdClose color="#C5FF66" size={25} />
@@ -91,7 +90,6 @@ const AccordionBox: React.FC = () => {
                 <FaPlus className="text-white" size={25} />
               )
             }
-            onClick={() => handleToggle(item.num)}
           >
             <p className="text-gray-400">{item.text}</p>
           </AccordionItem>
@@ -104,10 +102,10 @@ const AccordionBox: React.FC = () => {
             key={item.num}
             aria-label={item.name}
             textValue={item.name}
-            startContent={
+            title={
               <>
                 <span
-                  className={`p-3 text-xl  rounded-md mr-2 bg-icon ${getContentStyle2(
+                  className={`p-3 text-sm md:text-xl  rounded-md mr-2 bg-icon ${getContentStyle2(
                     item.num
                   )}`}
                 >

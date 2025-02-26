@@ -30,7 +30,7 @@ export default function ContainerHead({
         />
       )}
       <div className="text-center w-4/5 md:w-2/3">
-        <span className="text-3xl font-semibold text-white">{name}</span>
+        <span className="text-xl md:text-3xl font-semibold text-white">{name}</span>
         <p className="text-sm text-p mt-3">{text}</p>
       </div>
       {isButton && (

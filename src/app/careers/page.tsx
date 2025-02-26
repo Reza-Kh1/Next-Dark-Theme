@@ -3,7 +3,6 @@ import ContainerHead from "@/components/ContainerHead/ContainerHead";
 import ImageCustom from "@/components/ImageCustom/ImageCustom";
 import SectionHead from "@/components/SectionHead/SectionHead";
 import { Button } from "@nextui-org/react";
-import { div } from "framer-motion/client";
 import React from "react";
 const dataBox = [
   {
@@ -120,9 +119,9 @@ export default function page() {
         name="Welcome to SquareUp, where talent meets opportunity!"
         text="At SquareUp, we believe that the success of our agency lies in the talent, passion, and dedication of our team members. We are a digital product agency that thrives on innovation, creativity, and collaboration. If you're ready to make a difference and contribute to cutting-edge projects, we invite you to explore career opportunities with us."
       />
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 md:gap-0 md:grid-cols-2">
         {dataBox.map((i, index) => (
-          <section key={index} className="border-custom px-12 py-16">
+          <section key={index} className="border-custom px-4 md:px-12 py-6 md:py-16">
             <span className="text-[#D8FF99] text-2xl font-semibold">
               {i.title}
             </span>
@@ -138,14 +137,14 @@ export default function page() {
       />
       {dataCards.map((row) => (
         <div key={row.name}>
-          <span className="text-p text-2xl py-12 border-custom pl-12  w-full block">
+          <span className="text-p text-lg md:text-2xl py-6 md:py-12 border-custom pl-3 md:pl-12  w-full block">
             {row.name}
           </span>
-          <div className="grid grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 md:gap-0 md:grid-cols-3">
             {row.cards.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col gap-6 p-8 border-custom h-full justify-between"
+                className="flex flex-col gap-6 p-4 md:p-8 border-custom h-full justify-between"
               >
                 <ImageCustom
                   icon
@@ -157,8 +156,8 @@ export default function page() {
                 <span className="text-white font-semibold text-xl">
                   {item.title}
                 </span>
-                <p className="text-p text-justify">{item.text}</p>
-                <Button className="bg-dark-c text-white w-full rounded-md p-3 inline-block mt-8">
+                <p className="text-p text-justify text-sm">{item.text}</p>
+                <Button className="bg-dark-c text-white w-full rounded-md p-3 inline-block mt-3 md:mt-8">
                   Apply Now
                 </Button>
               </div>
